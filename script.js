@@ -1,6 +1,9 @@
 //store useable data
 const madLibs = {
-    _lib: ['To *VERB* a Mockingbird', 'I can\'t start my day without my *NOUN*', 'I like my *NOUN* *ADJECTIVE*'],
+    _lib: ['To *VERB* a Mockingbird', 
+    'I can\'t start my day without my *NOUN*', 
+    'I like my *NOUN* *ADJECTIVE*',
+    'I like to *ADJECTIVE* *VERB* *NOUN* all day long'],
     _noun: ['COFFEE', 'BED', 'CAR', 'GLASS', 'ROBOT', 'CHAIR'],
     _verb: ['JUMP', 'RUN', 'CRASH', 'THROW', 'STROKE', 'LIFT'],
     _adjective: ['STRONG', 'COLD', 'YELLOW', 'HOT', 'ILLUMINATING'],
@@ -21,6 +24,7 @@ const madLibs = {
 //Generate and return random number
 const rng = num => Math.floor(Math.random() * num); 
 
+//Generate and return random madlib
 const generateMsg = mlObj => {
     //grab random mad lib and split in to array to replace elements
     let lib = mlObj.lib[rng(mlObj.lib.length)].split(' ');
@@ -52,4 +56,4 @@ const generateMultipleMsg = num => {
     }
 }
 
-generateMultipleMsg(rng(10));
+generateMultipleMsg(rng(100));
